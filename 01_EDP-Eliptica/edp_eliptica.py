@@ -25,8 +25,8 @@ def met_gs_elipticas(a,b,c,d, N,M,h,k, w,f):
     fig = plt.figure(figsize=(10, 7))
     ax = fig.add_subplot(111, projection='3d')
     surf = ax.plot_surface(X, Y, w_np, cmap='viridis', edgecolor='none')
-    ax.set_xlabel('X axis')
-    ax.set_ylabel('Y axis')
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
     ax.set_zlabel('U(x,y)')
     ax.set_title('Solución EDP Elíptica por Met. Gauss-Seidel')
 

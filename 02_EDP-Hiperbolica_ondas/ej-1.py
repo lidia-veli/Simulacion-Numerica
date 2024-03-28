@@ -1,0 +1,66 @@
+'''
+f(x)=x*(b-x)
+g(x)=0
+b=5, d=10, N=40, M=400, v=0.5
+'''
+
+import numpy as np
+from edp_ondas import met_gs_hiperbolicas, verificar_velocidad_maxima
+
+
+# Condiciones iniciales
+a, b = 0, 5
+c, d = 0, 10
+N = 40
+M = 400
+
+# Velocidad
+v = 0.5
+
+# Tamaño pasos
+h = (b-a)/N
+k = (d-c)/M
+p = (v*k)/h
+
+# Condición de estabilidad (velocidad maxima)
+v_max = h/k
+v = verificar_velocidad_maxima(v, v_max)
+
+# Inicializar matriz de soluciones
+w = np.zeros((N+1, M+1))
+
+# Condiciones contorno
+def f(x):
+     return x*(b-x)
+
+def g(x):
+    return 0
+
+for i in range(1, N):  # eje X
+    x_i = a + i*h
+    w[i][0] = f(x_i)
+    w[i][1] = w[i][0] + k*g(x_i)
+
+for j in range(1, M):  # eje Y
+    y_i = c + j*k
+    w[0][j] = 0
+    w[N][j] = 0
+
+
+met_gs_hiperbolicas(a,b,c,d, N,M,p, w)
+
+
+
+'''
+hay una velocidad máxima, donde es h/k a partir de esta velocidad el método no es estable
+Siempre hay que calcularla para no pasarnos de ella
+
+Ec de ondas
+
+Si no nos pone las condiciones iniciales ni de contorno --> se quedan como están
+'''
+
+
+  
+
+
