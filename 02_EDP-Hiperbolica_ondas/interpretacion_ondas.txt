@@ -1,0 +1,12 @@
+ONDA ESTACIONARIA: ondas en las cuales hay puntos que permanecen inmóviles (nodos)
+Es la onda resultante de la interferencia de dos ondas de la misma naturaleza (mismas características) que avanzan en sentido opuesto a través de un medio.
+
+CONDICIONES DE CONTORNO:
+for i in range(1,N):  # eje X
+    x_i = a + i*h
+    w[i][0] = f(x_i)
+    w[i][1] = w[i][0] + k*g(x_i)
+
+for j in range(1,M):  # eje t
+    w[0][j] = 0
+    w[N][j] = 0

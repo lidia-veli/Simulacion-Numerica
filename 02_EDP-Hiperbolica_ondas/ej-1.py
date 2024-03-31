@@ -48,19 +48,3 @@ for j in range(1, M):  # eje Y
 
 
 met_gs_hiperbolicas(a,b,c,d, N,M,p, w)
-
-
-
-'''
-hay una velocidad máxima, donde es h/k a partir de esta velocidad el método no es estable
-Siempre hay que calcularla para no pasarnos de ella
-
-Ec de ondas
-
-Si no nos pone las condiciones iniciales ni de contorno --> se quedan como están
-'''
-
-
-  
-
-
