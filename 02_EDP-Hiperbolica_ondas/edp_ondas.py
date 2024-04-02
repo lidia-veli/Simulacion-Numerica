@@ -10,10 +10,10 @@ def verificar_velocidad_maxima(v, v_max):
     return v
 
 
-def gauss_seidel_ondas(a,b,c,d, N,M,p, w):
+def difer_progres_ondas(a,b,c,d, N,M,p, w):
     '''w = (M+1,N+1)'''
 
-    # Implementación de Gauss-Seidel para la ecuación hiperbólica
+    # Diferencias progresivas
     for j in range(1, M):
         for i in range(1, N):
             w[j+1][i] = 2*(1-p**2)*w[j][i] + (p**2)*(w[j][i+1] + w[j][i-1]) - w[j-1][i]
