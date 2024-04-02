@@ -28,14 +28,14 @@ w = np.zeros((M+1, N+1))
 def f(x):
     return np.exp(-(x-2.5)**2)
 
+for i in range(1,N):  # eje x
+    x_i = a + i*h
+    w[0][i] = f(x_i)
+
 for j in range(1,M):  # eje t
     y_i = (c+j*k)
     w[j][0] = 0
     w[j][N] = 0
-
-for i in range(1,N):  # eje x
-    x_i = a + i*h
-    w[0][i] = f(x_i)
 
 
 # Gauss-Seidel
