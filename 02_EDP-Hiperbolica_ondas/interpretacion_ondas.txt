@@ -10,3 +10,9 @@ for i in range(1,N):  # eje X
 for j in range(1,M):  # eje t
     w[0][j] = 0
     w[N][j] = 0
+
+
+ECUACION DE EVOLUCION: estamos usando los puntos de la malla
+datos de contorno de la variable temporal (derivada du/dt) y de la variable espacial
+
+sustituir cada derivada parcial por los cocientes

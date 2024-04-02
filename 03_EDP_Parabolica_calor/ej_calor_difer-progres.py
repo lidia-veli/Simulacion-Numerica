@@ -1,13 +1,12 @@
 '''
-f(x)=1 , 0<x<b/2
-f(x)=0 , b/2<x<b
+f(x) = exp(-(x-b/2)**2)
 '''
 
 
 import numpy as np
 import matplotlib.pyplot as plt
 
-from edp_calor import gauss_seidel_iter_calor
+from edp_calor import difer_progres_calor
 
 
 # PARÁMETROS
@@ -28,13 +27,9 @@ k = (d-c)/M
 w = np.zeros((M+1, N+1))
 
 
-#f CONDICIONES FRONTERA
-
+# CONDICIONES FRONTERA
 def f(x):
-    if 0 < x < b/2:
-        return 1
-    else:
-        return 0
+    return np.exp(-(x-b/2)**2)
 
 for j in range(1, M):  # eje t
     y_i = (c+j*k)
@@ -47,5 +42,4 @@ for i in range(1, N):  # eje x
     w[1][1] = 0
 
 
-
-gauss_seidel_iter_calor(a,b,c,d, N,M,h,k, w,v)
+difer_progres_calor(a,b,c,d, N,M,h,k, w,v)
